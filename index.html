@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Dental | Odontología Digital & Estética Avanzada</title>
+  <meta name="description" content="Clínica odontológica de alta tecnología y confort. Diseño de sonrisas, implantes dentales, ortodoncia y radiología digital 3D. Reservá tu turno en línea.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ── Background Canvas / Video ── -->
+  <div id="video-bg-container">
+    <canvas id="bg-canvas"></canvas>
+    <video id="bg-video" src="assets/video/background.mp4" muted playsinline preload="auto"></video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="logo">
+        <span class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5.5 3.5 4 2 2 2C2 7 4 10 6 12L6.5 19C6.7 20.7 8 22 9.5 22C10.5 22 11.3 21.3 12 20.2C12.7 21.3 13.5 22 14.5 22C16 22 17.3 20.7 17.5 19L18 12C20 10 22 7 22 2C20 2 18.5 3.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <div class="logo-text-block">
+          <span class="logo-name">Lumina</span>
+          <span class="logo-sub">Dental</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Inicio</a>
+        <a href="#nosotros" class="nav-link">Sobre Nosotros</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#turnos-disponibles" class="nav-link">Turnos Disponibles</a>
+        <a href="#tecnologia" class="nav-link">Tecnología</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- CTA + Hamburger -->
+      <div class="nav-cta">
+        <a href="#turnos-disponibles" class="btn-primary" id="open-booking">
+          <i data-lucide="calendar"></i>
+          Reservar Turno
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" class="mobile-link">Inicio</a>
+      <a href="#nosotros" class="mobile-link">Sobre Nosotros</a>
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#turnos-disponibles" class="mobile-link">Turnos Disponibles</a>
+      <a href="#tecnologia" class="mobile-link">Tecnología</a>
+      <a href="#contacto" class="mobile-link">Contacto</a>
+      <a href="#turnos-disponibles" class="btn-primary mobile-link" style="margin-top:16px;width:100%;justify-content:center;">
+        <i data-lucide="calendar"></i> Reservar Turno
+      </a>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="content-wrapper">
+
+    <!-- HERO -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          CUIDADO FUTURISTA · SONRISAS BRILLANTES
+        </div>
+        <h1 class="hero-title">
+          Odontología Avanzada<br>
+          para una <span class="title-accent">Sonrisa más Saludable</span>
+        </h1>
+        <p class="hero-desc">
+          Experimentá la combinación perfecta de tecnología avanzada, máximo confort y atención personalizada en cada consulta.
+        </p>
+        <div class="hero-actions">
+          <a href="#turnos-disponibles" class="btn-primary" id="hero-booking-btn">
+            <i data-lucide="calendar"></i>
+            Reservar Turno
+          </a>
+          <a href="#nosotros" class="btn-ghost">
+            <i data-lucide="play-circle"></i>
+            Ver Video
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=60&h=60&q=80" alt="paciente" class="trust-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&h=60&q=80" alt="paciente" class="trust-avatar">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b977?auto=format&fit=crop&w=60&h=60&q=80" alt="paciente" class="trust-avatar">
+          </div>
+          <div class="trust-text">
+            <div class="trust-stars">★★★★★</div>
+            <span>Confiado por +2.500 pacientes felices</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Widget -->
+      <div class="hero-widgets">
+        <div class="widget-card widget-stats">
+          <div class="widget-header-row">
+            <span class="widget-label">Trayectoria</span>
+            <span class="widget-badge">+15 años</span>
+          </div>
+          <div class="widget-body">
+            <div class="widget-avatar-group">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&h=80&q=80" alt="Especialista" class="widget-avatar">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=80&h=80&q=80" alt="Especialista" class="widget-avatar">
+            </div>
+            <div>
+              <div class="widget-name">Dr. Lucas &amp; Dra. Sofía</div>
+              <div class="widget-role">Directores Médicos · Lumina</div>
+            </div>
+          </div>
+          <div class="widget-stat-num">+5.000 <span>pacientes</span></div>
+          <svg class="widget-chart" viewBox="0 0 120 32">
+            <path d="M0,28 Q20,8 40,18 T80,10 T120,6" fill="none" stroke="#1565E8" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="120" cy="6" r="4" fill="#1565E8"/>
+          </svg>
+        </div>
+
+        <a href="#turnos-disponibles" class="widget-card widget-available" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="available-dot"></div>
+          <div class="available-text">
+            <strong>Turnos disponibles</strong>
+            <span>Reservá hoy mismo</span>
+          </div>
+          <i data-lucide="arrow-up-right" class="available-icon"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURES STRIP -->
+    <section class="features-strip">
+      <div class="section-container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3>Tecnología Avanzada</h3>
+            <p>Equipamiento de última generación para diagnósticos precisos y tratamientos de excelencia.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Comodidad Primero</h3>
+            <p>Relajate en un ambiente moderno y tranquilo diseñado para tu bienestar y confort.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Atención Experta</h3>
+            <p>Profesionales altamente calificados comprometidos con tu salud oral y bienestar.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 5 5 5 9c0 3 1.5 5.5 3 7.5L12 22l4-5.5C17.5 14.5 19 12 19 9c0-4-3-7-7-7z"/></svg>
+            </div>
+            <h3>Tratamiento Personalizado</h3>
+            <p>Planes de tratamiento a medida adaptados a tus necesidades únicas y presupuesto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="nosotros" class="about-section">
+      <div class="section-container">
+        <div class="about-grid">
+          <div class="about-text-col">
+            <div class="section-eyebrow">SOBRE LUMINA DENTAL</div>
+            <h2 class="section-title">
+              Donde la Innovación<br>se une a la <span class="title-accent">Compasión</span>
+            </h2>
+            <p class="about-body">
+              En Lumina Dental creemos que una sonrisa saludable transforma vidas. Nuestro equipo de profesionales especializados brinda cuidado dental de excelencia utilizando la tecnología digital más avanzada en un entorno relajante, moderno y centrado en el bienestar del paciente.
+            </p>
+            <a href="#servicios" class="btn-outline-blue">Conocé más</a>
+
+            <div class="about-stats-row">
+              <div class="about-stat">
+                <span class="stat-num">15+</span>
+                <span class="stat-label">Años de Excelencia</span>
+              </div>
+              <div class="about-stat-divider"></div>
+              <div class="about-stat">
+                <span class="stat-num">2.500+</span>
+                <span class="stat-label">Pacientes Felices</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image-col">
+            <div class="about-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=700&q=80" alt="Instalaciones Lumina Dental" class="about-img">
+              <div class="about-badge-card">
+                <i data-lucide="shield-check" class="badge-icon-blue"></i>
+                <div>
+                  <strong>Planes &amp; Coberturas</strong>
+                  <span>Atención particular y convenios</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicios" class="services-section">
+      <div class="section-container">
+        <div class="services-header">
+          <div class="section-eyebrow">NUESTROS SERVICIOS</div>
+          <h2 class="section-title">
+            Odontología Integral<br>para <span class="title-accent">Cada Sonrisa</span>
+          </h2>
+          <a href="#contacto" class="view-all-link">Ver todos los servicios <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Prevención y Limpieza</h3>
+            <p>Limpiezas, revisaciones y tratamientos preventivos para mantener tu salud dental óptima.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5.5 3.5 4 2 2 2C2 7 4 10 6 12L6.5 19C6.7 20.7 8 22 9.5 22C10.5 22 11.3 21.3 12 20.2C12.7 21.3 13.5 22 14.5 22C16 22 17.3 20.7 17.5 19L18 12C20 10 22 7 22 2C20 2 18.5 3.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/></svg>
+            </div>
+            <h3>Odontología Estética</h3>
+            <p>Mejorá tu sonrisa con blanqueamiento, carillas y diseño de sonrisa personalizados.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Restauraciones</h3>
+            <p>Rellenos, coronas, puentes e implantes para restaurar tu sonrisa con resultados naturales.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+            </div>
+            <h3>Ortodoncia</h3>
+            <p>Alineá tu mordida con brackets estéticos o alineadores modernos y de última generación.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <h3>Implantes Dentales</h3>
+            <p>Soluciones permanentes para dientes faltantes con implantes de titanio de alta precisión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TURNOS DISPONIBLES (SLOTS) -->
+    <section id="turnos-disponibles" class="slots-section">
+      <div class="section-container">
+        <!-- Glassmorphism header card -->
+        <div class="slots-header-box">
+          <div class="slots-header-info">
+            <div class="section-eyebrow">AGENDA EN TIEMPO REAL</div>
+            <h2 class="section-title">
+              Turnos Disponibles <span class="title-accent">Esta Semana</span>
+            </h2>
+            <p>Elegí tu horario ideal y reservá tu consulta al instante.</p>
+          </div>
+          <div class="slots-live-badge">
+            <span class="slots-live-dot"></span>
+            Cupos actualizados en vivo
+          </div>
+        </div>
+
+        <!-- Glassmorphism slots grid -->
+        <div class="slots-grid" id="slots-grid-container">
+          <!-- Day Card 1 -->
+          <div class="slot-card" data-day-offset="1">
+            <div class="slot-card-head">
+              <div>
+                <div class="slot-day-title slot-date-day">Mañana</div>
+                <div class="slot-day-date slot-date-full">Cargando fecha...</div>
+              </div>
+              <span class="slot-badge-count">✦ 4 cupos</span>
+            </div>
+            <div class="slot-times-list">
+              <button type="button" class="slot-time-btn" data-time="09:30"><i data-lucide="clock"></i> 09:30</button>
+              <button type="button" class="slot-time-btn" data-time="11:00"><i data-lucide="clock"></i> 11:00</button>
+              <button type="button" class="slot-time-btn" data-time="14:30"><i data-lucide="clock"></i> 14:30</button>
+              <button type="button" class="slot-time-btn" data-time="16:00"><i data-lucide="clock"></i> 16:00</button>
+            </div>
+            <button type="button" class="slot-card-cta open-slot-booking" data-time="09:30">
+              <i data-lucide="calendar-plus"></i> Reservar día
+            </button>
+          </div>
+
+          <!-- Day Card 2 -->
+          <div class="slot-card" data-day-offset="2">
+            <div class="slot-card-head">
+              <div>
+                <div class="slot-day-title slot-date-day">Pasado mañana</div>
+                <div class="slot-date-full">Cargando fecha...</div>
+              </div>
+              <span class="slot-badge-count">✦ 3 cupos</span>
+            </div>
+            <div class="slot-times-list">
+              <button type="button" class="slot-time-btn" data-time="10:00"><i data-lucide="clock"></i> 10:00</button>
+              <button type="button" class="slot-time-btn" data-time="11:30"><i data-lucide="clock"></i> 11:30</button>
+              <button type="button" class="slot-time-btn" data-time="15:00"><i data-lucide="clock"></i> 15:00</button>
+              <button type="button" class="slot-time-btn" data-time="17:00"><i data-lucide="clock"></i> 17:00</button>
+            </div>
+            <button type="button" class="slot-card-cta open-slot-booking" data-time="10:00">
+              <i data-lucide="calendar-plus"></i> Reservar día
+            </button>
+          </div>
+
+          <!-- Day Card 3 -->
+          <div class="slot-card" data-day-offset="3">
+            <div class="slot-card-head">
+              <div>
+                <div class="slot-day-title slot-date-day">Próximos días</div>
+                <div class="slot-date-full">Cargando fecha...</div>
+              </div>
+              <span class="slot-badge-count">✦ 4 cupos</span>
+            </div>
+            <div class="slot-times-list">
+              <button type="button" class="slot-time-btn" data-time="09:00"><i data-lucide="clock"></i> 09:00</button>
+              <button type="button" class="slot-time-btn" data-time="10:30"><i data-lucide="clock"></i> 10:30</button>
+              <button type="button" class="slot-time-btn" data-time="15:30"><i data-lucide="clock"></i> 15:30</button>
+              <button type="button" class="slot-time-btn" data-time="16:30"><i data-lucide="clock"></i> 16:30</button>
+            </div>
+            <button type="button" class="slot-card-cta open-slot-booking" data-time="09:00">
+              <i data-lucide="calendar-plus"></i> Reservar día
+            </button>
+          </div>
+
+          <!-- Day Card 4 -->
+          <div class="slot-card" data-day-offset="4">
+            <div class="slot-card-head">
+              <div>
+                <div class="slot-day-title slot-date-day">Fin de semana</div>
+                <div class="slot-date-full">Cargando fecha...</div>
+              </div>
+              <span class="slot-badge-count">✦ 3 cupos</span>
+            </div>
+            <div class="slot-times-list">
+              <button type="button" class="slot-time-btn" data-time="09:30"><i data-lucide="clock"></i> 09:30</button>
+              <button type="button" class="slot-time-btn" data-time="11:00"><i data-lucide="clock"></i> 11:00</button>
+              <button type="button" class="slot-time-btn" data-time="14:00"><i data-lucide="clock"></i> 14:00</button>
+              <button type="button" class="slot-time-btn" data-time="16:00"><i data-lucide="clock"></i> 16:00</button>
+            </div>
+            <button type="button" class="slot-card-cta open-slot-booking" data-time="09:30">
+              <i data-lucide="calendar-plus"></i> Reservar día
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="tecnologia" class="tech-section">
+      <div class="section-container">
+        <div class="tech-grid">
+          <div class="tech-image-col">
+            <div class="tech-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80" alt="Tecnología Arte Dental" class="tech-img">
+              <div class="tech-float-card">
+                <div class="tech-float-icon"><i data-lucide="zap"></i></div>
+                <div>
+                  <strong>Radiología Digital</strong>
+                  <span>Diagnóstico de precisión</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tech-text-col">
+            <div class="section-eyebrow">NUESTRA TECNOLOGÍA</div>
+            <h2 class="section-title">
+              Equipamiento de<br><span class="title-accent">Última Generación</span>
+            </h2>
+            <p class="about-body">
+              Contamos con tecnología de punta para brindarte el diagnóstico más preciso y los mejores resultados en cada tratamiento.
+            </p>
+            <ul class="tech-list">
+              <li><i data-lucide="check-circle"></i> Radiografía digital panorámica y periapical</li>
+              <li><i data-lucide="check-circle"></i> Tomografía computada de haz cónico (CBCT)</li>
+              <li><i data-lucide="check-circle"></i> Planificación digital 3D de implantes</li>
+              <li><i data-lucide="check-circle"></i> Blanqueamiento LED de última generación</li>
+              <li><i data-lucide="check-circle"></i> Instrumental esterilizado por vapor saturado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="cta-inner">
+        <div class="cta-icon-wrap">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5.5 3.5 4 2 2 2C2 7 4 10 6 12L6.5 19C6.7 20.7 8 22 9.5 22C10.5 22 11.3 21.3 12 20.2C12.7 21.3 13.5 22 14.5 22C16 22 17.3 20.7 17.5 19L18 12C20 10 22 7 22 2C20 2 18.5 3.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z" fill="rgba(255,255,255,0.3)"/></svg>
+        </div>
+        <div class="cta-text">
+          <h2>¿Listo para una Sonrisa más Saludable?</h2>
+          <p>Reservá tu turno hoy y experimentá el futuro de la atención dental.</p>
+        </div>
+        <a href="#turnos-disponibles" class="btn-cta" style="text-decoration:none;">
+          <i data-lucide="calendar"></i>
+          Reservar Turno
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contacto" class="footer-section">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="logo" style="margin-bottom:16px;display:inline-flex;">
+              <span class="logo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C5.5 3.5 4 2 2 2C2 7 4 10 6 12L6.5 19C6.7 20.7 8 22 9.5 22C10.5 22 11.3 21.3 12 20.2C12.7 21.3 13.5 22 14.5 22C16 22 17.3 20.7 17.5 19L18 12C20 10 22 7 22 2C20 2 18.5 3.5 17.5 5.5C16.5 3.5 14.5 2 12 2Z" fill="currentColor"/></svg>
+              </span>
+              <div class="logo-text-block">
+                <span class="logo-name" style="color:#fff;">Lumina</span>
+                <span class="logo-sub" style="color:#93c5fd;">Dental</span>
+              </div>
+            </a>
+            <p class="footer-tagline">Centro Odontológico de excelencia e innovación. Cuidado dental integral y tecnología digital avanzada para toda la familia.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navegación</h4>
+            <a href="#home">Inicio</a>
+            <a href="#nosotros">Sobre Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#turnos-disponibles">Turnos Disponibles</a>
+            <a href="#tecnologia">Tecnología</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <a href="#servicios">Prevención y Limpieza</a>
+            <a href="#servicios">Odontología Estética</a>
+            <a href="#servicios">Implantes Dentales</a>
+            <a href="#servicios">Ortodoncia</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <p><i data-lucide="map-pin"></i> Av. Libertador 2450, Piso 3</p>
+            <p><i data-lucide="clock"></i> Lun–Vie: 9:00 – 18:00</p>
+            <p><i data-lucide="message-circle"></i>
+              <a href="https://wa.me/15550192834" target="_blank">+1 (555) 019-2834</a>
+            </p>
+            <button class="btn-primary open-booking-btn" style="margin-top:12px;">
+              <i data-lucide="calendar"></i> Reservar Turno
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Lumina Dental Studio. Todos los derechos reservados.</p>
+          <a href="/panel.html" class="panel-link">
+            <i data-lucide="layout-dashboard"></i> Panel de Recepción
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── BOOKING MODAL ── -->
+  <div id="booking-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="calendar-check" class="modal-header-icon"></i>
+          <div>
+            <h3 id="modal-title">Reservar Turno</h3>
+            <p>Completá el formulario y te contactaremos para confirmar</p>
+          </div>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Cerrar">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <form id="appointment-form" class="booking-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Nombre completo <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i data-lucide="user"></i>
+              <input type="text" id="f-name" name="name" required placeholder="Ej: Carlos Méndez">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Correo electrónico <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i data-lucide="mail"></i>
+              <input type="email" id="f-email" name="email" required placeholder="paciente@ejemplo.com">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-phone">Teléfono</label>
+            <div class="input-wrap">
+              <i data-lucide="phone"></i>
+              <input type="tel" id="f-phone" name="phone" placeholder="+1 (555) 019-2834">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-service">Servicio <span class="req">*</span></label>
+            <div class="input-wrap select-wrap">
+              <i data-lucide="stethoscope"></i>
+              <select id="f-service" name="service" required>
+                <option value="">Seleccioná un servicio</option>
+                <option value="Prevención y Limpieza">Prevención y Limpieza</option>
+                <option value="Odontología Estética / Diseño de Sonrisa">Odontología Estética / Diseño de Sonrisa</option>
+                <option value="Blanqueamiento Dental">Blanqueamiento Dental</option>
+                <option value="Implantes Dentales">Implantes Dentales</option>
+                <option value="Prótesis (Carillas, Coronas)">Prótesis (Carillas, Coronas)</option>
+                <option value="Radiología Dental Digital">Radiología Dental Digital</option>
+                <option value="Ortodoncia">Ortodoncia</option>
+                <option value="Odontopediatría">Odontopediatría</option>
+                <option value="Consulta General">Consulta General</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-date">Fecha preferida <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i data-lucide="calendar"></i>
+              <input type="date" id="f-date" name="date" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-time">Horario disponible <span class="req">*</span></label>
+            <div class="input-wrap select-wrap">
+              <i data-lucide="clock"></i>
+              <select id="f-time" name="time" required>
+                <option value="">Seleccioná una fecha primero</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="f-notes">Notas adicionales</label>
+          <div class="input-wrap">
+            <i data-lucide="message-square"></i>
+            <textarea id="f-notes" name="notes" rows="3" placeholder="Contanos algo más sobre tu consulta o tratamiento..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-note"><i data-lucide="info"></i> Te contactaremos para confirmar el turno en las próximas horas.</p>
+          <button type="submit" class="btn-primary btn-submit" id="submit-btn">
+            <i data-lucide="send"></i>
+            <span>Confirmar Reserva</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success State -->
+      <div class="booking-success" id="booking-success" style="display:none;">
+        <div class="success-icon"><i data-lucide="check-circle"></i></div>
+        <h3>¡Reserva enviada!</h3>
+        <p id="success-message">Tu solicitud de turno fue recibida correctamente. Nos comunicaremos contigo pronto.</p>
+        <button class="btn-primary" id="close-success">
+          <i data-lucide="x"></i> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Connection status toast -->
+  <div id="connection-toast" class="connection-toast" style="display:none;"></div>
+
+  <!-- Firebase SDKs (Compat v10 - Pure static client-side) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
